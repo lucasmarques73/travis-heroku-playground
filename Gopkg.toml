@@ -26,7 +26,7 @@
 
 [metadata.heroku]
   root-package = "github.com/lucasmarques73/travis-heroku-playground"
-  go-version = "1.11.x"
+  go-version = "1.11"
   install = [ "./..."]
 
 [[constraint]]
