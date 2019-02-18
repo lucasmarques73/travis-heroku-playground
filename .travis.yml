@@ -1,11 +1,9 @@
 language: go
 
 go:
-- 1.11.x
+  - "1.11.x"
 
-sudo: required
-
- before_install:                                                                 
+before_install:                                                                 
   - curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh  
   - dep ensure
 
