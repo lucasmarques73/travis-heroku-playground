@@ -11,8 +11,8 @@ addons:
 
 script:
   - go test -v ./...
-  - go test -coverprofile=reports/coverage.out
-  - go test -json > reports/report.json
+  - go test -coverprofile=coverage.out
+  - go test -json > report.json
   - sonar-scanner
 
 deploy:
