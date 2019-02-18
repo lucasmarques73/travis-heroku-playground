@@ -11,7 +11,7 @@ import (
 
 func main() {
 
-	port := ":8000"
+	port := ":80"
 
 	router := mux.NewRouter().StrictSlash(true)
 
