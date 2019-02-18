@@ -1,0 +1,7 @@
+{"Time":"2019-02-18T16:00:48.079954-03:00","Action":"run","Package":"github.com/lucasmarques73/travis-heroku-playground","Test":"TestHome"}
+{"Time":"2019-02-18T16:00:48.080243-03:00","Action":"output","Package":"github.com/lucasmarques73/travis-heroku-playground","Test":"TestHome","Output":"=== RUN   TestHome\n"}
+{"Time":"2019-02-18T16:00:48.080278-03:00","Action":"output","Package":"github.com/lucasmarques73/travis-heroku-playground","Test":"TestHome","Output":"--- PASS: TestHome (0.00s)\n"}
+{"Time":"2019-02-18T16:00:48.080292-03:00","Action":"pass","Package":"github.com/lucasmarques73/travis-heroku-playground","Test":"TestHome","Elapsed":0}
+{"Time":"2019-02-18T16:00:48.080315-03:00","Action":"output","Package":"github.com/lucasmarques73/travis-heroku-playground","Output":"PASS\n"}
+{"Time":"2019-02-18T16:00:48.080736-03:00","Action":"output","Package":"github.com/lucasmarques73/travis-heroku-playground","Output":"ok  \tgithub.com/lucasmarques73/travis-heroku-playground\t0.044s\n"}
+{"Time":"2019-02-18T16:00:48.080788-03:00","Action":"pass","Package":"github.com/lucasmarques73/travis-heroku-playground","Elapsed":0.044}
