@@ -1,19 +1,25 @@
+dist: trusty
 language: go
-
+os:
+  - linux
 go:
   - "1.11.x"
 
-addons:
-  sonarcloud:
-    organization: "lucasmarques73-github" # the key of the org you chose at step #3
-    token:
-      secure: $SONAR_KEY 
+env:
+    global:
+        - CC_TEST_REPORTER_ID=$CODE_CLIMATE_KEY
+        - GIT_COMMITTED_AT=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then git log -1 --pretty=format:%ct; else git log -1 --skip 1 --pretty=format:%ct; fi)
+
+before_script:
+    - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+    - chmod +x ./cc-test-reporter
+    - go get github.com/axw/gocov/gocov
+    - chmod +x ./cover.sh
 
 script:
-  - go test -v ./...
-  - go test -coverprofile=coverage.out
-  - go test -json > report.json
-  - sonar-scanner
+    - go test $(go list ./... | grep -v vendor)
+    - "./cover.sh"
+    - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi
 
 deploy:
   provider: heroku
