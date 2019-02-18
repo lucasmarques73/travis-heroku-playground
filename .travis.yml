@@ -10,7 +10,7 @@ addons:
       secure: $SONAR_KEY 
 
 script:
-  - go test -v
+  - go test -v ./...
   - sonar-scanner
 
 deploy:
