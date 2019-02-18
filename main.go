@@ -23,7 +23,7 @@ func main() {
 	fmt.Println("Server running in port:", port)
 }
 
-func home(w http.ResponseWriter, r *http.Request) {
+func home(w http.ResponseWriter) {
 	t := template.Must(template.ParseFiles("templates/index.html"))
 	if err := t.ExecuteTemplate(w, "index.html", nil); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
