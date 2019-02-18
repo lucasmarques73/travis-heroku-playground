@@ -1,4 +1,0 @@
-mode: set
-github.com/lucasmarques73/travis-heroku-playground/main.go:13.13,24.2 5 0
-github.com/lucasmarques73/travis-heroku-playground/main.go:26.51,28.64 2 1
-github.com/lucasmarques73/travis-heroku-playground/main.go:28.64,30.3 1 0
