@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"text/template"
 
 	"github.com/gorilla/mux"
@@ -11,13 +12,13 @@ import (
 
 func main() {
 
-	port := ":80"
+	port := os.Getenv("PORT")
 
 	router := mux.NewRouter().StrictSlash(true)
 
 	router.HandleFunc("/", home).Methods("GET")
 
-	log.Fatal(http.ListenAndServe(port, router))
+	log.Fatal(http.ListenAndServe(":"+port, router))
 
 	fmt.Println("Server running in port:", port)
 }
